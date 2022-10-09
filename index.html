@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 产品图的基本样式设置 */
+        
+        .zoom-box-small {
+            position: relative;
+            display: inline-block;
+            margin: 50px 0 0 50px;
+            border: 1px solid #ccc;
+        }
+        
+        .zoom-box-small img {
+            float: left;
+            clear: both;
+        }
+        
+        .zoom-box-small div.clear {
+            clear: both;
+        }
+        
+        .zoom-box-small div.layer {
+            display: none;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 1px solid red;
+            background-color: skyblue;
+            opacity: 0.3;
+        }
+        /* 详情图基本样式设置 */
+        
+        .zoom-box-detail {
+            position: absolute;
+            display: none;
+            top: 50px;
+            left: 450px;
+            width: 323px;
+            height: 430px;
+            border: 1px solid red;
+            /* background: url(./imgs/02.jpg) no-repeat; */
+            overflow: hidden;
+        }
+        
+        .zoom-box-detail img {
+            position: absolute;
+            width: 800px;
+            height: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 这是产品图 -->
+        <div class="zoom-box-small">
+            <div class="layer">我是遮罩层</div>
+            <img src="01.jpg" alt="">
+            <div class="clear"></div>
+        </div>
+        <!-- 这是详情图 -->
+        <div class="zoom-box-detail">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="01.js"></script>
+    <script>
+        let $box = $('.box');
+        $box.bigLens();
+    </script>
+</body>
+
+</html>
